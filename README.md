@@ -25,6 +25,22 @@
   ```
 
   (Retorno: 2026-05-23 21:08:55         95 archivo_test_s3_BASH.txt)
-  
 
+<br><br>
+- Descargar el archivo en la máquina local en una carpeta diferente a la ubicación original y verificar que el archivo fue descargado correctamente:<br>
+  **1)** Moverse a la carpeta donde se quiere descargar para facilitar la descarga.<br>
+  ```bash
+   cd AWS_downloads/
+  ```
+
+   **2)** Copiar el archivo desde el bucket a la carpeta actual. 
+  ```bash
+   aws s3 cp s3://user-992245-ueia-so/archivo_test_s3_BASH.txt .
+  ```
+   **3)** Verificar que se haya copiado correctamente. 
+
+  ```bash
+   ls
+  ```
+  (Retorno: archivo_test_s3_BASH.txt)
 
