@@ -88,7 +88,7 @@
 
 **c)** Operaciones usando boto3 (Python)
 - Cargar un archivo al bucket utilizando boto3 y Verificar que el archivo fue cargado correctamente.<br>
-  **1)** Crear un scrip de python que permita subir el archivo al bucker.<br>
+  **1)** Crear un scrip de python que permita subir el archivo al bucket.<br>
   (El archivo esta en el repositorio en la carpeta  PYTHON_OP)
 
   **2)** Ejecutar el script.<br>
@@ -97,6 +97,23 @@
 
   **3)**Verificar la carga en el bucket.
   <img width="1659" height="432" alt="image" src="https://github.com/user-attachments/assets/dc634083-0993-46d7-8d1b-1d52fe2043c7" />
+
+
+- Descargar el archivo en la máquina local en una carpeta diferente a la ubicación original y verificar que el archivo fue descargado correctamente:<br>
+ **1)** Crear un scrip de python que permita descargar el archivo en la maquina local.<br>
+  (El archivo esta en el repositorio en la carpeta  PYTHON_OP)
+
+  **2)** Ejecutar el script.<br>
+  <img width="604" height="62" alt="image" src="https://github.com/user-attachments/assets/4ac32342-6d74-40bb-ba1e-164e22d5895d" />
+
+  
+
+  **3)**Verificar la carga en la carpeta local.
+  <img width="483" height="66" alt="image" src="https://github.com/user-attachments/assets/373a50a5-a726-468e-847f-f9c8abc85882" />
+
+  
+
+
 
 
 
