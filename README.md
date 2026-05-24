@@ -98,18 +98,23 @@
   **3)**Verificar la carga en el bucket.
   <img width="1659" height="432" alt="image" src="https://github.com/user-attachments/assets/dc634083-0993-46d7-8d1b-1d52fe2043c7" />
 
-
+<br><br>
 - Descargar el archivo en la máquina local en una carpeta diferente a la ubicación original y verificar que el archivo fue descargado correctamente:<br>
  **1)** Crear un scrip de python que permita descargar el archivo en la maquina local.<br>
   (El archivo esta en el repositorio en la carpeta  PYTHON_OP)
 
   **2)** Ejecutar el script.<br>
-  <img width="604" height="62" alt="image" src="https://github.com/user-attachments/assets/4ac32342-6d74-40bb-ba1e-164e22d5895d" />
+  <img width="604" height="62" alt="image" src="https://github.com/user-attachments/assets/4ac32342-6d74-40bb-ba1e-164e22d5895d" /><br>
+  (Se descarga en la carpeta de este mismo repositorio python_download)<br>
 
   
 
-  **3)**Verificar la carga en la carpeta local.
+  **3)** Verificar la carga en la carpeta local.<br>
   <img width="483" height="66" alt="image" src="https://github.com/user-attachments/assets/373a50a5-a726-468e-847f-f9c8abc85882" />
+
+<br><br>
+  -  Explicar qué cambia en el proceso de carga y descarga cuando se manejan múltiples archivos: <br><br>
+  Cuando se trabaja con múltiples archivos en Python usando boto3 en Amazon Web Services S3, el proceso de carga y descarga requiere automatización mediante estructuras como ciclos for, ya que realizar las operaciones archivo por archivo se vuelve ineficiente, además de que se deben construir rutas dinámicas (keys) para organizar los archivos dentro del bucket, y se vuelve necesario realizar verificaciones masivas en lugar de comprobaciones individuales, lo que implica mayor control sobre el flujo de datos, manejo de colecciones de archivos y optimización del proceso de transferencia en general.
 
   
 
