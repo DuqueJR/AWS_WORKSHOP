@@ -124,7 +124,7 @@
   **2)** Ejecutar el script.<br>
   <img width="585" height="80" alt="image" src="https://github.com/user-attachments/assets/d6d1417d-548c-4765-89a4-35da9cae2401" />
 
-  (Se toman de la carpeta de este mismo repositorio python_download_3_file)<br>
+  (Se toman de la carpeta de este mismo repositorio python_upload_3_file)<br>
 
   
 
@@ -132,6 +132,22 @@
 <img width="1775" height="553" alt="image" src="https://github.com/user-attachments/assets/e47855c9-e266-40b9-ad99-5780baca3e53" />
 
 
+<br>
+
+ **Para descargar** <br>
+ **1)** Crear un scrip de python que permita descargar los tres archivos del bucket a la carpeta local.<br>
+  (El archivo esta en el repositorio en la carpeta  PYTHON_OP)
+
+  **2)** Ejecutar el script.<br>
+  <img width="599" height="98" alt="image" src="https://github.com/user-attachments/assets/a174f7fe-059a-4ac6-a856-e4646d328d4d" />
+
+
+  (Se descargan la carpeta de este mismo repositorio python_download_3_file)<br>
+
+  
+
+  **3)** Verificar en la carpeta local.<br>
+  <img width="602" height="53" alt="image" src="https://github.com/user-attachments/assets/a13000ce-3bda-41e0-bf99-ab21b296aee2" />
 
 
 
