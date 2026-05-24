@@ -19,6 +19,12 @@
   **3)** Verificar que se cargo correctamente.
   <img width="1660" height="345" alt="image" src="https://github.com/user-attachments/assets/8c3966be-f6fa-4b5e-a215-a0077b672fcd" />
 
+  Por consola: <br>
+  ```bash
+  aws s3 ls s3://user-992245-ueia-so/
+  ```
+
+  (Retorno: 2026-05-23 21:08:55         95 archivo_test_s3_BASH.txt)
   
 
 
