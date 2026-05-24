@@ -49,4 +49,27 @@
 -  Explicar qué cambia en el proceso de carga y descarga cuando se manejan múltiples archivos: <br><br>
   Cuando se manejan múltiples archivos, el proceso de carga y descarga requiere automatización mediante ciclos for desde bash o comandos como sync que permite sincronizar una carpeta en la maquina local con un direccion del bucket, ya que realizar las operaciones manualmente archivo por archivo se vuelve ineficiente. Además, se hace necesaria una mejor organización, verificación masiva y optimización de transferencias para administrar correctamente todos los archivos.
 
+<br><br>
+- Presentar un ejemplo práctico de carga y descarga de múltiples archivos:
+  **1)** Crear una carpeta con multiples archivos.
+  ```bash
+  mkdir multple_upload
+  cd multple_upload/
+  for i in {1..10}; do touch test_mupload_$i; done
+  ```
+
+  **2)** Crear y ejecutar un scrip que con el metodo sync permita subir los archivos de la maquina local al bucket.<br>
+  (Este archivo esta en el repo en la carpeta BASH_OP)<br>
+
+  **3)** Ejecutar el script y observar el resultado con los archivos cargados. 
+  (Retorno: )
+  <img width="1054" height="539" alt="image" src="https://github.com/user-attachments/assets/d4cfd953-d73e-44a5-9310-04616ce02ed8" />
+
+  **4)** Verificar la carga en el bucket.
+  <img width="1653" height="726" alt="image" src="https://github.com/user-attachments/assets/75b7db12-12ff-4f4c-beeb-4bb3ee3bb4b6" />
+
+
+  (Los archivos son todos txt vacios)<br>
+
+
   
