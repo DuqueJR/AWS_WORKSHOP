@@ -1,15 +1,13 @@
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
-from mangum import Mangum
 from datetime import datetime
+from mangum import Mangum
 import os
 
 from s3 import s3, BUCKET
 from db import conn, cur
 
 app = FastAPI()
-
 handler = Mangum(app)
-
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
 
 def is_allowed(filename: str):
