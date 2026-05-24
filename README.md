@@ -239,8 +239,95 @@ sudo systemctl status fastapi
 <img width="822" height="389" alt="image" src="https://github.com/user-attachments/assets/00e32180-9832-437b-8e1f-91aa6bda48f9" />
 
 
-**4)** Verificar que funciona el daemond (Sali y volvi a conectarme a la instancia).
-<img width="1842" height="749" alt="image" src="https://github.com/user-attachments/assets/068f6c54-dbc5-4f3f-b6fb-d41d8c2aba7d" />
+**4)** Verificar que funciona el daemond (Se paro y posterior a eso se volvio a encender la instancia para probar si se volvia a correr la App).
+<img width="1778" height="809" alt="image" src="https://github.com/user-attachments/assets/8c78693e-bcac-4fb5-839e-5d8f136bbd82" />
+
+(Como se evidencia la IP cambia)
+
+<br><br><br>
+
+## Desarrollo y despliegue de una aplicación en FastAPI
+<br>
+
+**1)** Crear el bucket en S3 para almacenar las imagenes.
+<img width="1914" height="655" alt="image" src="https://github.com/user-attachments/assets/5f2b490b-8218-43e1-a1fe-8e559c44b3f5" />
+
+
+**2)** Crear la instancia de Postgres SQL en RDS.
+<img width="1614" height="243" alt="image" src="https://github.com/user-attachments/assets/4b43777f-985f-49ae-8a52-19b9532ba7ca" />
+
+**3)** Configurar la conexion para conectarse desde la instancia de EC2 previamente creada. 
+
+<img width="1610" height="534" alt="image" src="https://github.com/user-attachments/assets/c34e6c8e-3487-49dc-b251-1794ad0b12df" />
+
+**4)** Conectarse a la instancia desde el servidor de EC2.
+```bash
+ psql -h fastapi-rds-db.c98cscak09ed.us-east-2.rds.amazonaws.com -U postgres
+```
+<br>
+<img width="799" height="194" alt="image" src="https://github.com/user-attachments/assets/38a32a6f-ea0e-48b7-8771-ee2cdc4dedf3" />
+
+<br>
+
+**5)** Crear la base de datos.
+
+<br>
+
+```SQL
+create database fastapi_db;
+```
+
+
+<br>
+
+**6)** Conectarse a la base de datos. 
+<br>
+```bash
+psql -h fastapi-rds-db.c98cscak09ed.us-east-2.rds.amazonaws.com -U postgres -d fastapi_db
+```
+<br><br>
+**7)** Crear la tabla para alamacenar las imagenes. 
+<br>
+```SQL
+CREATE TABLE images (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(100),
+    image_path TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+<img width="585" height="345" alt="image" src="https://github.com/user-attachments/assets/1588d46e-a0a5-4d2e-97e2-80f0227930bb" />
+
+<br>
+
+
+**8)** Desde la instancia de EC2 se crea un proyecto con la aplicacion de fastAPI, que siga la estructura de:
+<br>
+```bash
+test_docker_fastapi/
+│
+├── main.py -> aplicacion principal 
+├── db.py -> Creacion de cursor para la base de datos
+├── s3.py ->Creacion de cliente S3
+└── config.py -> Configuracion de credenciales a la base de datos y al bucket
+```
+(Esto se creo en la instancia pero el codigo estara en una subcarpeta de PYTHON_OP llamada FASTAPI_DESPLIEGUE.)
+
+
+
+**9)** Se corre el proyecto de FastApi para probar que funciona. 
+<br>
+```bash
+uvicorn main:app --host 0.0.0.0 --port 8001
+```
+<br>
+Es importante destacar que tambien se debe agregar la inbound rule al EC2 para el puerto 8001. 
+<img width="1536" height="258" alt="image" src="https://github.com/user-attachments/assets/68f41a7a-a77b-4a3f-a0f6-349f927d1020" />
+
+
+<img width="1345" height="660" alt="image" src="https://github.com/user-attachments/assets/a1c1a877-e793-402e-a418-386f4d1cdc18" />
+
 
 
 
