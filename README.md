@@ -346,6 +346,7 @@ Es importante destacar que tambien se debe agregar la inbound rule al EC2 para e
 
 
 <br>
+
 **Contenerización**
 <br>
 
@@ -382,15 +383,15 @@ docker run -d -p 8001:8001 --name fastapi-container fastapi-image
 aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin <ACCOUNT_ID>.dkr.ecr.us-east-2.amazonaws.com
 ```
 <br>
-(En <AcountID> va mi acountID) 
+(En AcountID va mi acountID) 
 <br>
 
-**16)**Etiquetar la imagen
+**16)** Etiquetar la imagen
 ```bash
 docker tag fastapi-image:latest <ACCOUNT_ID>.dkr.ecr.us-east-2.amazonaws.com/fastapi-image:latest
 ```
 <br>
-(En <AcountID> va mi acountID) 
+(En AcountID va mi acountID) 
 <br>
 
 
@@ -399,11 +400,28 @@ docker tag fastapi-image:latest <ACCOUNT_ID>.dkr.ecr.us-east-2.amazonaws.com/fas
 docker push <ACCOUNT_ID>.dkr.ecr.us-east-2.amazonaws.com/fastapi-image:latest
 ```
 <br>
-(En <AcountID> va mi acountID) 
+(En AcountID va mi acountID) 
 <br>
 
 <img width="1654" height="448" alt="image" src="https://github.com/user-attachments/assets/4768c8e5-7ce7-4062-b339-740adb38416e" />
 
+<br>
+
+**Despliegue en AWS Lambda**
+<br>
+
+**18)** Crear una funcion lambda. 
+<img width="1817" height="595" alt="image" src="https://github.com/user-attachments/assets/fa21404d-59c4-4501-bc27-9027a143ccb7" />
+
+**17)** Configurar URL publica.
+<img width="1376" height="539" alt="image" src="https://github.com/user-attachments/assets/0320719e-561b-40a7-879c-0060d8eda3fb" />
+
+**19)** Configurar el VPC al mismo del RDS para permitir la conexion. 
+<img width="1630" height="710" alt="image" src="https://github.com/user-attachments/assets/4747e002-c64d-4ae5-afd2-dd8bb1600492" />
+
+**20)** Verificar funcionamiento.
+<img width="1883" height="730" alt="image" src="https://github.com/user-attachments/assets/1a14a936-dbd4-4a2e-b1fe-745adb345557" />
+<img width="1733" height="992" alt="image" src="https://github.com/user-attachments/assets/1e4bd56f-707a-4d17-9000-b75aa4616ec2" />
 
 
 
