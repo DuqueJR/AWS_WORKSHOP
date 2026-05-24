@@ -71,5 +71,20 @@
 
   (Los archivos son todos txt vacios)<br>
 
+  **Para descargar**<br>
+  **1)** Crear y ejecutar un scrip que con el metodo sync permita subir los archivos de la maquina local al bucket.<br>
+  (Este archivo esta en el repo en la carpeta BASH_OP)<br>
+
+   **2)** Ejecutar el script
+  <img width="1098" height="286" alt="image" src="https://github.com/user-attachments/assets/d72ffbb1-bf94-44b7-9e7a-d1bf9b211850" />
+
+
+  **3)** Verificar la carga en la carpeta local.
+  
+  <img width="813" height="78" alt="image" src="https://github.com/user-attachments/assets/74615230-d261-4539-9ce8-55862c365426" />
+
+  
+  
+
 
   
