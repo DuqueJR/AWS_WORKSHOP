@@ -116,7 +116,21 @@
   -  Explicar qué cambia en el proceso de carga y descarga cuando se manejan múltiples archivos: <br><br>
   Cuando se trabaja con múltiples archivos en Python usando boto3 en Amazon Web Services S3, el proceso de carga y descarga requiere automatización mediante estructuras como ciclos for, ya que realizar las operaciones archivo por archivo se vuelve ineficiente, además de que se deben construir rutas dinámicas (keys) para organizar los archivos dentro del bucket, y se vuelve necesario realizar verificaciones masivas en lugar de comprobaciones individuales, lo que implica mayor control sobre el flujo de datos, manejo de colecciones de archivos y optimización del proceso de transferencia en general.
 
+<br><br>
+- Realizar una prueba cargando y descargando tres archivos de texto.:<br>
+ **1)** Crear un scrip de python que permita cargar los tres archivos de la maquina local al bucket.<br>
+  (El archivo esta en el repositorio en la carpeta  PYTHON_OP)
+
+  **2)** Ejecutar el script.<br>
+  <img width="585" height="80" alt="image" src="https://github.com/user-attachments/assets/d6d1417d-548c-4765-89a4-35da9cae2401" />
+
+  (Se toman de la carpeta de este mismo repositorio python_download_3_file)<br>
+
   
+
+  **3)** Verificar la carga en el bucket.<br>
+<img width="1775" height="553" alt="image" src="https://github.com/user-attachments/assets/e47855c9-e266-40b9-ad99-5780baca3e53" />
+
 
 
 
