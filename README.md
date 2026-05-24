@@ -6,7 +6,9 @@
 **b)** Operaciones usando Bash / AWS CLI
 - Cargar un archivo al bucket mediante línea de comandos:<br>
   **1)** Crear un archivo de prueba. <br>
-  ```nano archivo_test_s3_BASH.txt```<br>
+  ```bash
+  nano archivo_test_s3_BASH.txt
+  ```<br>
   (Este archivo se crea en la carpeta AWS_WORKSHOP)
 
 
