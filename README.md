@@ -129,13 +129,13 @@
   
 
   **3)** Verificar la carga en el bucket.<br>
-<img width="1775" height="553" alt="image" src="https://github.com/user-attachments/assets/e47855c9-e266-40b9-ad99-5780baca3e53" />
+  <img width="1775" height="553" alt="image" src="https://github.com/user-attachments/assets/e47855c9-e266-40b9-ad99-5780baca3e53" />
 
 
-<br>
-
- **Para descargar** <br>
- **1)** Crear un scrip de python que permita descargar los tres archivos del bucket a la carpeta local.<br>
+  <br>
+  
+  **Para descargar** <br>
+  **1)** Crear un scrip de python que permita descargar los tres archivos del bucket a la carpeta local.<br>
   (El archivo esta en el repositorio en la carpeta  PYTHON_OP)
 
   **2)** Ejecutar el script.<br>
@@ -149,6 +149,9 @@
   **3)** Verificar en la carpeta local.<br>
   <img width="602" height="53" alt="image" src="https://github.com/user-attachments/assets/a13000ce-3bda-41e0-bf99-ab21b296aee2" />
 
+<br><br><br>
+
+## Despliegue de aplicación FastAPI en Amazon EC2
 
 
 
