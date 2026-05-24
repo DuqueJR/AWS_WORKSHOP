@@ -44,3 +44,9 @@
   ```
   (Retorno: archivo_test_s3_BASH.txt)
 
+<br><br>
+
+-  Explicar qué cambia en el proceso de carga y descarga cuando se manejan múltiples archivos: <br><br>
+  Cuando se manejan múltiples archivos, el proceso de carga y descarga requiere automatización mediante ciclos for desde bash o comandos como sync que permite sincronizar una carpeta en la maquina local con un direccion del bucket, ya que realizar las operaciones manualmente archivo por archivo se vuelve ineficiente. Además, se hace necesaria una mejor organización, verificación masiva y optimización de transferencias para administrar correctamente todos los archivos.
+
+  
