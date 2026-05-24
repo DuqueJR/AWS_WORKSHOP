@@ -72,7 +72,7 @@
   (Los archivos son todos txt vacios)<br>
 
   **Para descargar**<br>
-  **1)** Crear y ejecutar un scrip que con el metodo sync permita subir los archivos de la maquina local al bucket.<br>
+  **1)** Crear scrip que con el metodo sync permita subir los archivos de la maquina local al bucket.<br>
   (Este archivo esta en el repo en la carpeta BASH_OP)<br>
 
    **2)** Ejecutar el script
@@ -83,8 +83,22 @@
   
   <img width="813" height="78" alt="image" src="https://github.com/user-attachments/assets/74615230-d261-4539-9ce8-55862c365426" />
 
-  
-  
+
+<br><br> 
+
+**c)** Operaciones usando boto3 (Python)
+- Cargar un archivo al bucket utilizando boto3 y Verificar que el archivo fue cargado correctamente.<br>
+  **1)** Crear un scrip de python que permita subir el archivo al bucker.<br>
+  (El archivo esta en el repositorio en la carpeta  PYTHON_OP)
+
+  **2)** Ejecutar el script.<br>
+  (El archivo que se va a cargar esta en la ruta /home/duquejr/AWS_WORKSHOP/archivo_test_s3_PYTHON.txt)
+  <img width="523" height="37" alt="image" src="https://github.com/user-attachments/assets/664c8377-fdbc-484c-954a-74c9f23c8bbd" />
+
+  **3)**Verificar la carga en el bucket.
+  <img width="1659" height="432" alt="image" src="https://github.com/user-attachments/assets/dc634083-0993-46d7-8d1b-1d52fe2043c7" />
+
+
 
 
   
