@@ -153,6 +153,98 @@
 
 ## Despliegue de aplicación FastAPI en Amazon EC2
 
+**1)** Crear una instancia de Amazon EC2.<br>
+Configuraciones: <br>
+<img width="1065" height="859" alt="image" src="https://github.com/user-attachments/assets/40df6d4f-a0bf-477a-83ea-4b36c7903f87" />
+<img width="1066" height="733" alt="image" src="https://github.com/user-attachments/assets/35684573-c338-4d70-9c19-d43a86e55b7f" />
+<img width="1068" height="646" alt="image" src="https://github.com/user-attachments/assets/30fddcef-e020-4532-a9e6-c592422b6f28" />
+<img width="1102" height="589" alt="image" src="https://github.com/user-attachments/assets/0521300c-e139-4d37-ad38-034e4fc2cdc5" />
+
+**3)** Crear una nueva Inbound Rule en el grupo de seguridad asociado a la instancia para permitir el acceso a la aplicacion de FASTAPI a traves del puerto 8000.
+<img width="1654" height="416" alt="image" src="https://github.com/user-attachments/assets/feba4620-3fdc-48c2-b31a-291a4300a55e" />
+<img width="1657" height="796" alt="image" src="https://github.com/user-attachments/assets/1df7e94b-d687-4ab3-b200-a9d697aae8ed" />
+
+
+
+**2)** Conectarse a la instancia (SSH).<br>
+
+```bash
+chmod 400 fa_aws_wp.pem
+ssh -i fa_aws_wp.pem ubuntu@18.191.187.69
+```
+
+<br>
+
+**3)** Instalar y activar Docker dentro de la isntancia.<br>
+```bash
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+
+```
+<br>
+
+**4)** Dar permisos al usuario ubuntu.<br>
+```bash
+sudo usermod -aG docker ubuntu
+
+```
+<br>
+
+
+**5)** Clonar este repositorio dentro de la instancia
+
+```bash
+git clone https://github.com/DuqueJR/AWS_WORKSHOP.git
+```
+
+<br>
+
+
+**6)** Construir imagen docker y ejecutar el contenedor corriendo el scrip run_container.sh.
+```bash
+bash run_container.sh
+```
+
+<br>
+
+**7)** Verificar que se expone correctamente el servicio.
+<img width="1728" height="844" alt="image" src="https://github.com/user-attachments/assets/d54a6ebc-528f-49f7-862f-7743c6bec850" />
+
+<br><br>
+**Crear el DAEMOND**
+
+**1)** Crear el servicio que almacena el daemond.
+```bash
+sudo nano /etc/systemd/system/fastapi.service
+```
+<br>
+contenido:
+<br>
+<img width="823" height="663" alt="image" src="https://github.com/user-attachments/assets/6db5d822-43db-4cb7-a31c-84a5b10f0226" />
+
+
+**2)** Activar el servico.
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable fastapi
+sudo systemctl start fastapi
+```
+
+**3)** Verificar estado del servico.
+```bash
+sudo systemctl status fastapi
+```
+
+<img width="822" height="389" alt="image" src="https://github.com/user-attachments/assets/00e32180-9832-437b-8e1f-91aa6bda48f9" />
+
+
+**4)** Verificar que funciona el daemond (Sali y volvi a conectarme a la instancia).
+<img width="1842" height="749" alt="image" src="https://github.com/user-attachments/assets/068f6c54-dbc5-4f3f-b6fb-d41d8c2aba7d" />
+
+
+
+
 
 
 
