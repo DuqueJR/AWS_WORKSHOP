@@ -329,6 +329,86 @@ Es importante destacar que tambien se debe agregar la inbound rule al EC2 para e
 <img width="1345" height="660" alt="image" src="https://github.com/user-attachments/assets/a1c1a877-e793-402e-a418-386f4d1cdc18" />
 
 
+**10)** Verificar funcionamiento. 
+- POST:
+  <img width="1307" height="546" alt="image" src="https://github.com/user-attachments/assets/bef19567-7504-469d-8880-7021f46d6487" />
+  <img width="1316" height="577" alt="image" src="https://github.com/user-attachments/assets/8eebf1bb-2aae-4d8c-9aa5-b854c9f67b97" />
+  <img width="1641" height="413" alt="image" src="https://github.com/user-attachments/assets/6175a6f8-7602-415c-822c-840ffa310d3b" />
+  <br>
+  **Registro en la base de datos**
+  <img width="799" height="325" alt="image" src="https://github.com/user-attachments/assets/d0e9ba84-ad6b-4f01-80b4-bdc08fa12ab6" />
+  <br>
+
+
+-GET: 
+  <img width="1298" height="488" alt="image" src="https://github.com/user-attachments/assets/ea606f32-bda0-45d5-aac8-0e33c637f6b9" />
+  <img width="1299" height="538" alt="image" src="https://github.com/user-attachments/assets/77aab4bb-e360-479b-a74a-dd7257d38e7b" />
+
+
+<br>
+**Contenerización**
+<br>
+
+**11)** Crear files necesarios para la contenerizacion - Requiremnt.txt y DOCKERFILE. 
+
+<br>
+
+**12)** Contruir la imagen. 
+
+```bash
+docker build -t fastapi-image .
+```
+
+<br>
+
+**13)** Correr el contenedor para verificar funcionamiento. 
+
+```bash
+docker run -d -p 8001:8001 --name fastapi-container fastapi-image
+```
+
+<br>
+
+**Publicar la imagen**
+
+<br>
+
+**14)** Crear repositorio en ECR.
+<img width="1636" height="312" alt="image" src="https://github.com/user-attachments/assets/6ce16b8d-524c-4734-9dd8-0a3978128e7e" />
+
+
+**15)** Autenticar docker con aws. 
+```bash
+aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin <ACCOUNT_ID>.dkr.ecr.us-east-2.amazonaws.com
+```
+<br>
+(En <AcountID> va mi acountID) 
+<br>
+
+**16)**Etiquetar la imagen
+```bash
+docker tag fastapi-image:latest <ACCOUNT_ID>.dkr.ecr.us-east-2.amazonaws.com/fastapi-image:latest
+```
+<br>
+(En <AcountID> va mi acountID) 
+<br>
+
+
+**17)** Sbuir la imagen.
+```bash
+docker push <ACCOUNT_ID>.dkr.ecr.us-east-2.amazonaws.com/fastapi-image:latest
+```
+<br>
+(En <AcountID> va mi acountID) 
+<br>
+
+<img width="1654" height="448" alt="image" src="https://github.com/user-attachments/assets/4768c8e5-7ce7-4062-b339-740adb38416e" />
+
+
+
+
+
+
 
 
 
